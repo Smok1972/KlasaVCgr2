@@ -7,6 +7,9 @@ width:300px;
   border: 1px solid white;
   border-collapse:collapse;
 }
+th,td{
+  border: 1px solid white;
+}
 .klasa{
   color: magenta;
 }
