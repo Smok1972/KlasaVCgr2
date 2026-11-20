@@ -45,6 +45,7 @@ width:300px;
 .smok {
   color: yellow;
   background-color:green;
+  border:3px solid pink;
 }
 
 .igi {
