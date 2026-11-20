@@ -24,6 +24,11 @@ body{
 .mango{
   color: orange;
 }
+
+#ob{
+  border-color: green;
+  border-width: 3px;
+}
 .denis{
   color: aqua;
 }
