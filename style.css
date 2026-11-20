@@ -16,7 +16,8 @@ width:300px;
 .klasa2{
   color: purple;
     font-weight: bold;
-
+ border-color: green;
+  border-width: 3px;
 }
 
 .szymon {
