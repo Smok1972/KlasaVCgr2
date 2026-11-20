@@ -35,6 +35,7 @@ width:300px;
 #ob{
   border-color: green;
   border-width: 3px;
+  border: solid;
 }
 .denis{
   color: aqua;
@@ -54,8 +55,4 @@ width:300px;
   background-color:violet;
 }
 
-.szymcio
-{
-  color: green;
-  border:3px solid black;
-}
+
