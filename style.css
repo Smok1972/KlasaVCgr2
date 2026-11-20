@@ -14,7 +14,7 @@ body{
 }
 
 .szymon {
-  font-size: 2px;
+  font-size: 25px;
 }
 .hi 
 {
@@ -33,7 +33,8 @@ body{
   color: aqua;
 }
 .mateusz {
-  color: green;
+  color: red;
+  font-size: 5px
 }
 .smok {
   color: yellow;
