@@ -1,1 +1,112 @@
+<!DOCTYPE html>
+    <html lang="en">
 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Zliczanie liczb dodatnich w tablicy</title>
+        <script defer>
+            function sum() {
+                let q = document.querySelector("#input");
+                let sQ = q.value.split(',');
+
+                let d = 0;
+                let sD = 0;
+                let u = 0;
+                let sU = 0;
+                let z = 0;
+                let n = 0;
+
+                sQ.forEach((x) => {
+                    if (parseInt(x) > 0) {
+                        d++;
+                        sD += parseInt(x);
+                    } else if (parseInt(x) < 0) {
+                        u++;
+                        sU += parseInt(x);
+                    } else if (parseInt(x) == 0) {
+                        z++;
+                    } else {
+                        n++;
+                    }
+                });
+
+                document.querySelector("#paragraph1").textContent = `Liczba liczb dodatnich wynosi ${d}, suma ${sD}`;
+                document.querySelector("#paragraph2").textContent = `Liczba liczb ujemnych wynosi ${u}, suma ${sU}`;
+                document.querySelector("#paragraph3").textContent = `Liczba zer wynosi ${z}`;
+            }
+        </script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+            html {
+                padding: 0;
+                margin: 0;
+                height: 100%;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: Fira Sans, Verdana, Tahoma, sans-serif;
+                padding: 0;
+                margin: 0;
+            }
+
+            .header {
+                width: 100%;
+                font-size: 3rem;
+                padding: 5px 0;
+                text-align: center;
+                background-color: #006D67;
+                color: whitesmoke;
+            }
+
+            .container {
+                width: 50%;
+                margin: auto;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+
+            .container>input {
+                padding: 5px;
+                width: 70%;
+                margin: 10px 5px;
+            }
+
+            .container>button {
+                padding: 10px;
+                width: 50%;
+                background-color: #007f79;
+                color: white;
+                border-radius: 10px;
+            }
+            .container>button:hover {
+                background-color: #008680;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="vh100">
+
+            <div class="header">
+                Zliczanie liczb dodatnich w tablicy
+            </div>
+            <div class="container">
+                <label for="inp">Podaj liczby całkowite (kolejne liczby rozdziel przecinkiem)</label>
+                <input type="text" name="inp" id="input">
+                <button onclick="sum()">Zlicz</button>
+            </div>
+            <div class="container">
+                <p id="paragraph1"></p>
+                <p id="paragraph2"></p>
+                <p id="paragraph3"></p>
+            </div>
+        </div>
+    </body>
+
+    </html>
