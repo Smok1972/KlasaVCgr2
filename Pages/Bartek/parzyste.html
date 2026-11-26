@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *
+        {
+            background-color: black;
+            color: rgb(14, 208, 18);
+            align-items: center;
+            text-align: center;
+            
+        }
+*::-webkit-scrollbar
+{
+    display: none;
+}
+        input
+        {
+            border: 1px rgb(14, 208, 18) solid;
+            border-color: rgb(14, 208, 18);
+            border-radius: 15px;
+        }
+
+        button
+        {
+            border: 1px rgb(14, 208, 18) solid;
+            border-color: rgb(14, 208, 18);
+            border-radius: 15px;
+        }
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Liczby parzyste</h2>
+
+    <form>
+        <label for="poczatek">Początek przedziału: </label>
+        <input type="text" id="poczatek"><br><br>
+        <label for="koniec">Koniec przedziału: </label>
+        <input type="text" id="koniec"><br><br>
+        <button type="button" onclick="liczbyParzyste()">Wyświetl</button><br><br>
+        <label for="komunikat" id="komunikat"></label><br><br>
+        <label for="wynik" id="wynik"></label><br><br>
+    </form>
+
+    <script>
+        function liczbyParzyste()
+        {
+           
+            let poczatek = document.getElementById("poczatek").value;
+            let koniec = document.getElementById("koniec").value;
+            let komunikat = document.getElementById("komunikat");
+            let wynik = document.getElementById("wynik");
+            komunikat.innerHTML = "";
+            wynik.innerHTML = "";
+            if(poczatek === "" || koniec === "")
+        {
+            komunikat.innerHTML = "Wypełnij wszytkie pola!";
+            return;
+        }
+        if(!Number.isInteger(Number(poczatek)) || ! Number.isInteger(Number(koniec)))
+        {
+            komunikat.innerHTML = "Podaj liczby całkowite!";
+            return;
+        }
+        poczatek = Number(poczatek);
+        koniec = Number(koniec);
+        if(poczatek > koniec)
+        {
+            komunikat.innerHTML = "Początek nie może być większy od końca!"
+            return;
+        }
+        let liczby = "";
+        for(let i = poczatek; i <= koniec; i++)
+        {
+            if(i%2 === 0)
+         {
+            liczby += i + "  ";
+         }
+        }
+        wynik.innerHTML = "Liczby parzyste: " + liczby;
+        }
+    </script>
+</body>
+</html>
