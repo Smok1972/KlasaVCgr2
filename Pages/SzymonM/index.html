@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pechowa liczba - Szymon Muc Markiewicz 5C</title>
+</head>
+<body>
+    <div class="userGuessMenu">
+        <label class="guessLabel">Wpisz liczbę: </label>
+        <input type="number" id="guessInput">
+        <button id="guessButton" onclick="guess()">Zgaduj</button>
+    </div>
+    
+    <div class="gameMenu">
+    <p id="result"></p>
+    <button id="resetButton" onclick="reset()">Zresetuj grę</button>
+    </div>
+</body>
+</html>
+<script>
+var winningNumber = Math.floor(Math.random() * 100)
+var guessCount = 0;
 
+function guess() {
+    let guessedNumber = document.getElementById("guessInput").value
+
+    if(guessedNumber == "" || guessedNumber < 0 || guessedNumber > 100) {
+        document.getElementById("result").innerHTML = "Wpisz wartość od 0 do 100"
+        return;
+    }
+
+    guessCount++
+
+    if(guessedNumber > winningNumber) {
+        document.getElementById("result").innerHTML = "Wygrywająca liczba jest mniejsza"
+        return;
+    }
+
+    if(guessedNumber < winningNumber) {
+        document.getElementById("result").innerHTML = "Wygrywająca liczba jest większa"
+        return;
+    }
+
+    if(guessedNumber == winningNumber) {
+        document.getElementById("result").innerHTML = "Wygrałeś! Ilość zgadnięć: " + guessCount 
+        document.getElementById("guessButton").disabled = true
+        return;
+    }
+}
+
+function reset(){
+    guessCount = 0
+    document.getElementById("guessButton").disabled = false
+    winningNumber = Math.floor(Math.random() * 100)
+    document.getElementById("result").innerHTML = ""
+    document.getElementById("guessInput").value = ""
+}
+
+</script>
+<style>
+    .userGuessMenu, .gameMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: lightgray;
+}
+
+.guessLabel {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+#guessInput,  #guessButton, #resetButton{
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+}
+
+#guessInput {
+    border: 1px black solid;
+}
+
+#guessButton, #resetButton {
+    font-size: 20px;
+}
+
+#result {
+    color: red;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.gameMenu {
+    margin-top: 20px;
+}
+</style>
