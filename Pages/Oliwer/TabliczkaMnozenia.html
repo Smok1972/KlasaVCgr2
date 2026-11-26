@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabliczka mnożenia - Oliwer Słaboń</title>
+</head>
+<body>
+    <style>
+h2{
+    font-size: 50px;
+    background-color:antiquewhite;
+    margin-top: 0;
+    font-family:fantasy;
+}
+body{
+    text-align: center;
+    margin: 0 auto;
+    background-color:bisque;
+}
+table{
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: 30em;
+    height: 30em;
+}
+td{
+    border: 1px solid black;
+    padding: 3px;
+    text-align: center;
+    width: 40px;
+    height: 30px;
+}
+
+    </style>
+    <h2 id="header">Tabliczka mnożenia do STO</h2>
+
+    <table id="tabela"></table>
+    <script>
+        let tabela = document.getElementById("tabela");
+
+let kolory = ["red", "blue", "lime", "pink", "purple", "orange", "green", "magenta", "cyan", "teal"];
+
+for(let i = 1; i <= 10; i++){
+    let wiersz = document.createElement("tr");
+
+    for(let j =1; j <= 10; j++){
+        let komorka = document.createElement("td");
+
+        komorka.innerHTML = i * j;
+        komorka.style.backgroundColor = kolory[i - 1];
+
+        wiersz.appendChild(komorka);
+    }
+        tabela.appendChild(wiersz);
+}
+
+let header = document.getElementById("header");
+let tekst = header.innerHTML;
+
+header.innerHTML ="";
+
+for(let i =0; i < tekst.length; i++){
+    let litera = document.createElement("kolory");
+
+    litera.innerHTML = tekst[i];
+    litera.style.color = kolory[i % 10];
+
+    header.appendChild(litera);
+}
+    </script>
+</body>
+</html>
