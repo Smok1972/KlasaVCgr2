@@ -1,1 +1,159 @@
+<!DOCTYPE html>
 
+<html lang="pl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Odliczanie z komunikatem</title>
+
+<style>
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: linear-gradient(to bottom right, #168bff, #f58acb);
+
+    font-family: Arial, sans-serif;
+
+}
+
+
+
+button {
+
+    width: 280px;
+
+    height: 150px;
+
+    border: 2px solid rgba(255,255,255,0.9);
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.18);
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
+
+    color: white;
+
+    font-size: 38px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+
+    transition: transform 0.2s, background 0.2s;
+
+}
+
+
+
+button:hover {
+
+    background: rgba(255,255,255,0.28);
+
+    transform: scale(1.05);
+
+}
+
+
+
+button:active {
+
+    transform: scale(0.97);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<button id="start">START</button>
+
+
+
+<script>
+
+const button = document.getElementById("start");
+
+let running = false;
+
+
+
+button.addEventListener("click", () => {
+
+    if (running) return;
+
+
+
+    running = true;
+
+    let count = 10;
+
+    button.textContent = count;
+
+
+
+    const timer = setInterval(() => {
+
+        count--;
+
+        button.textContent = count;
+
+
+
+        if (count === 0) {
+
+            clearInterval(timer);
+
+            setTimeout(() => {
+
+                button.textContent = "START";
+
+                running = false;
+
+            }, 1000);
+
+        }
+
+    }, 1000);
+
+});
+
+</script>
+
+
+
+</body>
+
+</html>
