@@ -6,6 +6,7 @@
     <title>Pechowa liczba - Szymon Muc Markiewicz 5C</title>
 </head>
 <body>
+    <h1>Zgadywanie liczb</h1>
     <div class="userGuessMenu">
         <label class="guessLabel">Wpisz liczbę: </label>
         <input type="number" id="guessInput">
@@ -16,6 +17,7 @@
     <p id="result"></p>
     <button id="resetButton" onclick="reset()">Zresetuj grę</button>
     </div>
+    <footer><a href="../..">Wróć</a><b>Szymon Muc Markiewicz</b></footer>
 </body>
 </html>
 <script>
@@ -59,6 +61,26 @@ function reset(){
 
 </script>
 <style>
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+    background-color: lightgray; 
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    width: 25%;
+    margin: 25px auto;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+b {
+    text-align: right;
+}
+
     .userGuessMenu, .gameMenu {
     display: flex;
     flex-direction: column;
