@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Najmniejsza liczba w tablicy</title>
+    <style>
+        body{
+            font-family: Arial;
+            background-color: aliceblue;
+        }
+        .okno{
+            background: white;
+            width: 380px;
+            margin: 100px auto;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px gray;
+        }
+        h2{
+            color: midnightblue;
+            font-size: 28px;
+         }
+p{
+    color: dimgray;
+}
+         input{
+
+            padding: 12px;
+            width: 85%;
+            border: 1px solid lightgray;
+            border-radius: 8px;
+            font-size: 15px;
+         }
+
+         button{
+            background-color: royalblue;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+         }
+
+         button:hover{
+            background: midnightblue;
+         }
+        #wynik{
+            font-size: 20px;
+            color: royalblue;
+            margin-top: 25px;
+            font-weight: bold;
+        }
+    
+
+
+    </style>
+</head>
+<body>
+    <div class="okno">
+        <h2>Najmniejsza liczba</h2>
+        <p>Wpisz liczby całkowite oddzielone przecinkami: </p>
+    <input type="text" id="liczby" placeholder="Np. 5, -3 ,8 ,0 ,2">
+    <br><br>
+    <button onclick="znajdz()">Znajdź min</button>
+    <p id="wynik"></p>
+     </div>
+     <script src="min.js"></script>
+</body>
+</html>
