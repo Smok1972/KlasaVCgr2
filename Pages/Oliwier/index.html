@@ -1,143 +1,185 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zliczanie konkretnej litery w tekście</title>
 </head>
+
 <body>
+
     <h1>Liczenie Liter</h1>
-<div class="mainfrag">
-    <style>
-        body {
-            background-color: brown;
-            font-size: 50px;
-        }
-        .mainfrag{
-            text-align: center;
-        }
-        h1 {
-            text-align: center;
-        }
-        #tekst
-        {
-            border-color: black;
-            background-color: black;
-            text-align: center;
-            color: brown;
+    <div class="goraa">
+        <a href="../../index.html" class="powrot">
 
-        }
-        #Litera
-        {
-            background-color: white;
-            text-align: center;
-            color: black;
-            background-color: crimson;
+            <img class="strz" src="strzala.png" alt="">
+        </a>
+    </div>
 
-        }
+    <div class="mainfrag">
+        <style>
+            .strz {
+                position: absolute;
+                top: 76px;
+                right: 10px;
+                  }
 
-        button
-        {
-            background-color: crimson;
-        }
-        #wynik
-        {
-            background-color: crimson;
-            text-align: center;
-            color: black;
-            margin-left: 40px;
-            margin-right: 40px;
-        padding-bottom: 30px;
-        padding-top: 30px;
-        }
-        input
-        {
-            padding: 40px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: bold;
-        }
-        
-        button
-        {
-            padding: 40px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: bold;
-        }
-        select{
-            padding: 40px;
-             font-family: Arial, Helvetica, sans-serif;
-            font-weight: bold;
-            
-        }
-    </style>
+            body {
+                background-color: brown;
+                font-size: 50px;
+                 }
 
-    <form>
-        <input type="text" id="tekst" placeholder="Wpisz tekst"/>
-        <select id="Litera">
-            <option value="A">A</option>
-            <option value="Ą">Ą</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-            <option value="Ć">Ć</option>
-            <option value="D">D</option>
-            <option value="E">E</option>
-            <option value="Ę">Ę</option>
-            <option value="F">F</option>
-            <option value="G">G</option>
-            <option value="H">H</option>
-            <option value="I">I</option>
-            <option value="J">J</option>
-            <option value="K">K</option>
-            <option value="L">L</option>
-            <option value="Ł">Ł</option>
-            <option value="M">M</option>
-            <option value="N">N</option>
-            <option value="Ń">Ń</option>
-            <option value="O">O</option>
-            <option value="P">P</option>
-            <option value="R">R</option>
-            <option value="S">S</option>
-            <option value="Ś">Ś</option>
-            <option value="T">T</option>
-            <option value="U">U</option>
-            <option value="Ó">Ó</option>
-            <option value="W">W</option>
-            <option value="X">X</option>
-            <option value="Y">Y</option>
-            <option value="Z">Z</option>
+            .mainfrag 
+                {
+                text-align: center;
+                }
+
+            h1 {
+                text-align: center;
+
+               }
+
+            .autor {
+                text-align: center;
+                   }
+
+            #tekst {
+                
+                border-color: black;
+                background-color: black;
+                text-align: center;
+                color: brown;
+
+                   }
+
+            #Litera {
+                background-color: white;
+                text-align: center;
+                color: black;
+                background-color: crimson;
+
+                    }
+
+            button {
+                background-color: crimson;
+            }
+
+            #wynik {
+                background-color: crimson;
+                text-align: center;
+                color: black;
+                margin-left: 30px;
+                margin-right: 30px;
+                padding-bottom: 30px;
+                padding-top: 30px;
+
+                border-color: black;
+            }
+
+            input {
+                padding: 40px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+            }
+
+            button {
+                padding: 40px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+            }
+
+            select {
+                padding: 40px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+
+            }
+
+            p {
+                text-align: center;
+            }
+        </style>
+
+        <form>
+            <input type="text" id="tekst" placeholder="Wpisz tekst" />
+            <select id="Litera">
+                <option value="A">A</option>
+                <option value="Ą">Ą</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="Ć">Ć</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="Ę">Ę</option>
+                <option value="F">F</option>
+                <option value="G">G</option>
+                <option value="H">H</option>
+                <option value="I">I</option>
+                <option value="J">J</option>
+                <option value="K">K</option>
+                <option value="L">L</option>
+                <option value="Ł">Ł</option>
+                <option value="M">M</option>
+                <option value="N">N</option>
+                <option value="Ń">Ń</option>
+                <option value="O">O</option>
+                <option value="P">P</option>
+                <option value="R">R</option>
+                <option value="S">S</option>
+                <option value="Ś">Ś</option>
+                <option value="T">T</option>
+                <option value="U">U</option>
+                <option value="Ó">Ó</option>
+                <option value="W">W</option>
+                <option value="X">X</option>
+                <option value="Y">Y</option>
+                <option value="Z">Z</option>
             </select>
 
             <script>
                 function licz() {
-    let tekst = document.getElementById("tekst").value;
-    let litera = document.getElementById("Litera").value;
+                    let tekst = document.getElementById("tekst").value;
+                    let litera = document.getElementById("Litera").value;
 
-    let ile = 0;
+                    let ile = 0;
 
-    for (let i = 0 ; i < tekst.length;i++)
-    {
-        if (tekst[i].toLowerCase() == litera.toLowerCase()){
-            ile++;
-        }
-    }
-    if (ile == 1)
-    {
+                    for (let i = 0; i < tekst.length; i++) {
+                        if (tekst[i].toLowerCase() == litera.toLowerCase()) {
+                            ile++;
+                        }
+                    }
+                    if (ile == 1) {
 
-    
-document.getElementById("wynik").innerHTML = "Litera " +
-litera + " występuje " + ile + " raz.";
-    }
-    else{
-        document.getElementById("wynik").innerHTML = "Litera " +
-litera + " występuje " + ile + " razy.";
-    }
 
-}
+                        document.getElementById("wynik").innerHTML = "Litera " +
+                            litera + " występuje " + ile + " raz.";
+                    }
+                    else {
+                        document.getElementById("wynik").innerHTML = "Litera " +
+                            litera + " występuje " + ile + " razy.";
+                    }
+
+                }
+
+                function reset() {
+                    location.reload();
+                }
             </script>
-        <button type="button" onclick="licz()">Policz</button>
-    </form>
-    <h2>Poniżej po wpisaniu danych wyświetli sie wynik!</h2>
-    <p id="wynik"></p>
+            <button type="button" onclick="licz()">Policz</button>
+            <button onclick="reset()">Zresetuj </button>
+        </form>
+        <h2>Poniżej po wpisaniu danych wyświetli sie wynik!</h2>
+        <p id="wynik"></p>
     </div>
+    <div id="autor">
+        <p>&copy; Autor: Oliwier Respondek</p>
+
+
+    </div>
+
+
+
 </body>
+
 </html>
