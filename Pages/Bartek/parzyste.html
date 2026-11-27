@@ -10,10 +10,10 @@
             text-align: center;
             
         }
-*::-webkit-scrollbar
-{
-    display: none;
-}
+        *::-webkit-scrollbar
+            {
+             display: none;
+            }
         input
         {
             border: 1px rgb(14, 208, 18) solid;
@@ -28,6 +28,16 @@
             border-radius: 15px;
         }
 
+        #exit
+        {
+            font-size: 10px;
+            text-align: left;
+            align-items: left;
+            display: flex;
+            align-items: start;
+            text-decoration: none;
+        }
+
 
     </style>
     <meta charset="UTF-8">
@@ -35,6 +45,8 @@
     <title>Document</title>
 </head>
 <body>
+    
+    <button type="button" id="exit"><a href="../../index.html" id="exit">Wyjście</a></button>
     <h2>Liczby parzyste</h2>
 
     <form>
@@ -46,6 +58,8 @@
         <label for="komunikat" id="komunikat"></label><br><br>
         <label for="wynik" id="wynik"></label><br><br>
     </form>
+
+    <footer>Autor: Bartosz Wilczak 5c</footer>
 
     <script>
         function liczbyParzyste()
