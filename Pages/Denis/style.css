@@ -3,7 +3,7 @@
 }
 body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background-color: violet;
     color: white;
     cursor: crosshair;
     min-height: 100vh;
@@ -14,6 +14,7 @@ body{
 
 .container{
     background: rgba(255, 255, 255, 0.08);
+    background-color: purple;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255, 0.08);
     border-radius: 25px;
@@ -52,7 +53,7 @@ input:hover{
     box-shadow: 0 0 15px violet;
 }
 button{
-    background:linear-gradient(135deg,#8b5cf6, #c084fc);
+    background:linear-gradient(135deg,#e44dff, #c084fc);
     color: white;
     border:none;
     border-radius: 12px;
@@ -65,7 +66,7 @@ button{
 }
 button:hover{
     transform: scale(1.1);
-    background: linear-gradient(135deg,#c084fc,#8b5cf6);
+    background: linear-gradient(135deg,#c084fc,#db9aff);
     box-shadow: 0 0 20px violet;
 }
 button:active{
