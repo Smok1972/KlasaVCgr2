@@ -1,1 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma liczb nieparzystych</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: darkslategray;
+        }
+       
+        #formularz {
+            width: 100%;
+            max-width: 360px;
+            padding: 24px;
+            background-color: dimgray;
+            border: 1px solid silver;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px black;
+        }
 
+        #formularz label {
+            display: block;
+            margin-top: 12px;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            color: gainsboro;
+        }
+
+        #formularz label:first-child {
+            margin-top: 0;
+        }
+
+        #formularz input[type="text"] {
+            width: 100%;
+            padding: 9px 2px;
+            font-size: 1rem;
+            color: white;
+            background-color: darkslategray;
+            border: 1px solid lightgray;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.15s ease;
+        }
+
+         #formularz input[type="text"]:focus {
+            border-color: gold;
+        }
+
+        #formularz button {
+            width: 100%;
+            margin-top: 18px;
+            padding: 10px 14px;
+             font-size: 1rem;
+             font-weight: 600;
+             color: white;
+             background-color: darkslategrey;
+             border: 1px solid silver;
+             border-radius: 8px;
+             cursor: pointer;
+             transition: background-color 0.15s ease;
+        }
+
+        #formularz button:hover{
+            background-color: dodgerblue;
+        }
+
+        #formularz button:active{
+            background-color: mediumblue;
+        }
+
+        #wynik {
+            width: 100%;
+            max-width: 360px;
+            margin-top: 14px;
+            padding: 12px 14px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        #wynik:empty {
+            display: none;
+        }
+
+        #wynik.blad {
+            background-color: crimson;
+            border: 1px solid lightcoral;
+            color: white;
+        }
+
+        #wynik.sukces {
+            background-color: seagreen;
+            border: 1px solid black;
+            color: white;
+        }
+
+        #cofnij {
+            background-color: transparent;
+            padding: 4px;
+        }
+
+        #cofnij img {
+            display: block;
+            width: 32px;
+            height: 32px;
+            margin: 0 auto;
+        }
+
+        .goacik {
+            color: blanchedalmond;
+            box-shadow: none;
+            border: none;
+            background: transparent;
+            padding: 0;
+            text-shadow: 0 0 12px blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+        <h1 class="goacik">Kacper Operskalski 5C</h1>
+        <form id="formularz">
+        <label for="poczatek">Poczatek przedziału:</label>
+        <input type="text" id="poczatek" value="1">
+
+        <label for="koniec">Koniec przedziału:</label>
+        <input type="text" id="koniec" value="10">
+
+        <button type="button" id="policz">Oblicz sumę</button>
+        <button type="button" id="odswiez">Odswież</button>
+        <button type="button" id="cofnij">
+            <img src="strzalka.jpg"/>
+        </button>
+        </form> 
+        <div id="wynik"></div>    
+    <script>
+
+            document.getElementById("policz").addEventListener("click", function () {
+                const aText = document.getElementById("poczatek").value.trim();
+                const bText = document.getElementById("koniec").value.trim();
+                const wynik = document.getElementById("wynik");
+
+                if (aText === "" || bText === "") {
+                    wynik.style.color = "red";
+                    wynik.textContent = "Błąd: puste pole";
+                    return;
+                }
+
+                const a = Number(aText);
+                const b = Number(bText);
+
+                if (!Number.isInteger(a) || !Number.isInteger(b)) {
+                    wynik.style.color = "red";
+                    wynik.textContent = "Błąd: wpisz liczby całkowite";
+                    return;
+                 
+                }
+                const min = Math.min(a, b);
+                const max = Math.max(a, b);
+                let suma = 0;
+
+                for (let i = min; i <= max; i++) {
+                    if (i % 2 !== 0) {
+                        suma += i;
+                    }
+                }
+
+                wynik.style.color = "green";
+                wynik.textContent = "Suma liczb nieparzystych: " + suma;
+            });
+            document.getElementById("odswiez").addEventListener("click", function () {
+                location.reload();
+            });
+            document.getElementById("cofnij").addEventListener("click", function (){
+                window.location.href = "../../index.html";
+            })
+    </script>
+
+</body>
+</html>

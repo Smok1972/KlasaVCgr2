@@ -1,1 +1,102 @@
 
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Podzielne przez 3 lub 5</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #171923;
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        form {
+            background: #252a3a;
+            width: 350px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px #000;
+        }
+
+        h2 {
+            color: #7c9cff;
+        }
+
+        input {
+            padding: 12px;
+            margin: 10px;
+            width: 80%;
+            border: none;
+            border-radius: 8px;
+            background: #393f52;
+            color: white;
+        }
+
+        button {
+            background: #657fff;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background: #405bd1;
+        }
+
+        #wynik {
+            margin-top: 20px;
+            color: #7cffb2;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="formularz">
+        <h2>Podzielne przez 3 lub 5</h2>
+
+        <input type="number" id="poczatek" placeholder="Początek przedziału">
+
+        <input type="number" id="koniec" placeholder="Koniec przedziału">
+
+        <br>
+
+        <button type="submit">Wyświetl liczby</button>
+
+        <p id="wynik"></p>
+    </form>
+
+    <script>
+        document.getElementById("formularz").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let a = document.getElementById("poczatek").value;
+            let b = document.getElementById("koniec").value;
+            let wynik = document.getElementById("wynik");
+
+            wynik.innerHTML = "";
+
+            if (a == "" || b == "" || !Number.isInteger(Number(a)) || !Number.isInteger(Number(b))) {
+                wynik.innerHTML = "Podaj liczby całkowite!";
+            }
+            else {
+                for (let i = Number(a); i <= Number(b); i++) {
+                    if (i % 3 == 0 || i % 5 == 0) {
+                        wynik.innerHTML += i + " ";
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

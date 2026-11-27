@@ -1,0 +1,16 @@
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: blue;
+}
+
+.container
+{
+    color: white;
+    text-align: center;
+}
+
+h4 a
+{
+    color: white;
+}

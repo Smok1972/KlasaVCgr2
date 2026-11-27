@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klasyczny FizzBuzz</title>
+    <link rel="stylesheet" href="panibadajjestsuper.css">
+</head>
+<script defer>
+
+
+
+    function liczto() {
+        let poczatek = document.getElementById("maciek").value;
+        let koniec = document.getElementById("koszykowka").value;
+        let wynik = document.getElementById("o");
+
+        for (let i = poczatek; i <= koniec; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                wynik.textContent += "FizzBuzz";
+            }
+
+            else if (i % 3 == 0) {
+
+                wynik.textContent += "Fizz";
+
+
+            } else if (i % 5 == 0) {
+                wynik.textContent += "Buzz";
+
+            }
+
+        
+    }
+}
+</script>
+
+<body>
+    <a href="../../index.html">Wróć</a>
+    <h1>Zagrajmy w FIZZ BUZZ!!! (version beta)</h1>
+    <img id="jakies" src="fizzbuzz.png" alt="fizzbuzzlogo" >
+
+    <form>
+        Początek przedziału:
+        <input type="number" name="" id="maciek"><br>
+        Koniec przedziału:
+        <input type="number" name="" id="koszykowka"><br>
+        <Button id="oj" onclick="liczto()" type="button">GRAJ</Button>
+    </form>
+    <h2 id="o"></h2>
+    <a href="https://allegro.pl/?srsltid=AY6E9601GJ_5h1gMfNeJSJz49V_6lFVtkpzZp05lYza7xM9Iker9xIFd"><img  id="jakies" src="halo.png" alt="dobranoc" ></a>
+    
+</body>
+
+</html>

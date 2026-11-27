@@ -1,1 +1,519 @@
+<!DOCTYPE html>
 
+
+
+<html lang="pl">
+
+
+
+<head>
+
+
+
+<meta charset="UTF-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<title>Odliczanie z komunikatem</title>
+
+
+
+<style>
+
+
+
+* {
+
+
+
+    margin: 0;
+
+
+
+    padding: 0;
+
+
+
+    box-sizing: border-box;
+
+
+
+}
+
+
+
+body {
+
+
+
+    min-height: 100vh;
+
+
+
+    display: flex;
+
+
+
+    justify-content: center;
+
+
+
+    align-items: center;
+
+
+
+    background: linear-gradient(to bottom right, #168bff, #f58acb);
+
+
+
+    font-family: Arial, sans-serif;
+
+
+
+}
+
+
+
+/* STRZAŁKA POWROTU */
+
+
+
+.back-button {
+
+
+
+    position: fixed;
+
+
+
+    top: 30px;
+
+
+
+    left: 30px;
+
+
+
+    display: flex;
+
+
+
+    align-items: center;
+
+
+
+    text-decoration: none;
+
+
+
+    color: white;
+
+
+
+    height: 45px;
+
+
+
+    z-index: 10;
+
+
+
+    overflow: hidden;
+
+
+
+}
+
+
+
+.back-arrow {
+
+
+
+    font-size: 38px;
+
+
+
+    font-weight: normal;
+
+
+
+    line-height: 1;
+
+
+
+    transform: scaleX(0.85);
+
+
+
+    transition: transform 0.3s ease;
+
+
+
+    position: relative;
+
+
+
+    z-index: 2;
+
+
+
+}
+
+
+
+.back-text {
+
+
+
+    font-size: 17px;
+
+
+
+    font-weight: bold;
+
+
+
+    white-space: nowrap;
+
+
+
+    opacity: 0;
+
+
+
+    transform: translateX(-25px);
+
+
+
+    max-width: 0;
+
+
+
+    overflow: hidden;
+
+
+
+    transition:
+
+
+
+        opacity 0.35s ease,
+
+
+
+        transform 0.35s ease,
+
+
+
+        max-width 0.4s ease;
+
+
+
+}
+
+
+
+.back-button:hover .back-arrow {
+
+
+
+    transform: scale(1.05);
+
+
+
+}
+
+
+
+.back-button:hover .back-text {
+
+
+
+    opacity: 1;
+
+
+
+    transform: translateX(0);
+
+
+
+    max-width: 250px;
+
+
+
+    margin-left: 12px;
+
+
+
+}
+
+
+
+/* PRZYCISK START */
+
+
+
+button {
+
+
+
+    width: 280px;
+
+
+
+    height: 150px;
+
+
+
+    border: 2px solid rgba(255,255,255,0.9);
+
+
+
+    border-radius: 25px;
+
+
+
+    background: rgba(255,255,255,0.18);
+
+
+
+    backdrop-filter: blur(15px);
+
+
+
+    -webkit-backdrop-filter: blur(15px);
+
+
+
+    color: white;
+
+
+
+    font-size: 38px;
+
+
+
+    font-weight: bold;
+
+
+
+    cursor: pointer;
+
+
+
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+
+
+
+    transition: transform 0.2s, background 0.2s;
+
+
+
+}
+
+
+
+button:hover {
+
+
+
+    background: rgba(255,255,255,0.28);
+
+
+
+    transform: scale(1.05);
+
+
+
+}
+
+
+
+button:active {
+
+
+
+    transform: scale(0.97);
+
+
+
+}
+
+
+
+
+
+
+.author {
+
+
+
+    position: fixed;
+
+
+
+    bottom: 10px;
+
+
+
+    left: 50%;
+
+
+
+    transform: translateX(-50%);
+
+
+
+    color: white;
+
+
+
+    font-size: 7px;
+
+
+
+    font-weight: bold;
+
+
+
+}
+
+
+
+</style>
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+
+
+
+
+<a href="../../index.html" class="back-button">
+
+
+
+    <span class="back-arrow">&lt;</span>
+
+
+
+    <span class="back-text">powrót do strony głównej</span>
+
+
+
+</a>
+
+
+
+<button id="start">START</button>
+
+
+
+
+
+
+<div class="author">autor: Igor Kurcz</div>
+
+
+
+<script>
+
+
+
+const button = document.getElementById("start");
+
+
+
+let running = false;
+
+
+
+button.addEventListener("click", () => {
+
+
+
+    if (running) return;
+
+
+
+    running = true;
+
+
+
+    let count = 10;
+
+
+
+    button.textContent = count;
+
+
+
+    const timer = setInterval(() => {
+
+
+
+        count--;
+
+
+
+        button.textContent = count;
+
+
+
+        if (count === 0) {
+
+
+
+            clearInterval(timer);
+
+
+
+            setTimeout(() => {
+
+
+
+                button.textContent = "START";
+
+
+
+                running = false;
+
+
+
+            }, 1000);
+
+
+
+        }
+
+
+
+    }, 1000);
+
+
+
+});
+
+
+
+</script>
+
+
+
+</body>
+
+
+
+</html>
